@@ -1,0 +1,29 @@
+Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+
+Applies to the bundled fonts:
+  PxPlus IBM VGA 8x16  — Outline (vector) version by VileR, 2020
+  PxPlus IBM CGA       — Outline (vector) version by VileR, 2020
+
+Source: The Ultimate Oldschool PC Font Pack, https://int10h.org/oldschool-pc-fonts/
+Author: VileR (int10h.org)
+
+You are free to:
+  * Share  — copy and redistribute the material in any medium or format
+  * Adapt  — remix, transform, and build upon the material for any purpose,
+             even commercially.
+
+Under the following terms:
+  * Attribution — You must give appropriate credit (done in ../CREDITS.md and
+    in this notice), provide a link to the license, and indicate if changes
+    were made. The bundled font files here are the unmodified originals.
+  * ShareAlike  — If you remix, transform, or build upon the material, you
+    must distribute your contributions under the same license as the original.
+
+This ShareAlike obligation applies ONLY to these two font files and any
+derivatives of them — NOT to the rest of this repository (the installer code
+and palettes are MIT-licensed).
+
+The full legal code of CC BY-SA 4.0 is available at:
+https://creativecommons.org/licenses/by-sa/4.0/legalcode
+Human-readable summary:
+https://creativecommons.org/licenses/by-sa/4.0/

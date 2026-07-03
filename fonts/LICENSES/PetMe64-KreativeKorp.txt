@@ -1,0 +1,13 @@
+Applies to the bundled font: Pet Me 64
+Author: Rebecca G. Bettencourt / Kreative Korp
+Source: https://www.kreativekorp.com/software/fonts/c64/
+
+Pet Me 64 is part of Kreative Korp's Commodore 64 font set and is released
+free of charge for personal and commercial use and redistribution. The font
+carries no embedded machine-readable license field; the grant of use is made
+on the author's distribution page (linked above). The glyphs are a faithful
+recreation of the Commodore 64 character ROM; Commodore's original bitmap
+character set dates to 1982.
+
+If you redistribute this font, keep this notice and the attribution above.
+When in doubt about terms for a specific use, consult the source page.

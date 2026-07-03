@@ -1,0 +1,49 @@
+GNOME Terminal profiles - fonts used per theme
+========================================================
+
+Themed fonts (profile -> font, size):
+--------------------------------------------------------
+  ubuntu          Ubuntu Mono 13
+  winterminal     Cascadia Code 12
+  powershell      Cascadia Mono 12
+  firefox         Fira Mono 12
+  github          Monaspace Neon Frozen 12
+  github.dark     Monaspace Neon Frozen 12
+  dos             PxPlus IBM VGA 8x16 12
+  cga             PxPlus IBM CGA 12
+  c64.16color     Pet Me 64 12
+  c64.8color      Pet Me 64 12
+  gameboy         VT323 16
+  minecraft       Monocraft 13
+  phosphor.amber  VT323 16
+  phosphor.green  VT323 16
+  phosphor.blue   VT323 16
+  mono.black      Courier Prime 12
+  mono.white      Courier Prime 12
+
+Font details (license / source):  [full table: fonts/CREDITS.md]
+--------------------------------------------------------
+  Ubuntu Mono              Ubuntu Font Licence 1.0  (Canonical)
+  Cascadia Code            OFL-1.1  (Microsoft)
+  Cascadia Mono            OFL-1.1  (Microsoft)
+  Fira Mono                OFL-1.1  (Mozilla)
+  Monaspace Neon Frozen    OFL-1.1  (GitHub)
+  PxPlus IBM VGA 8x16      CC BY-SA 4.0  (VileR / int10h)
+  PxPlus IBM CGA           CC BY-SA 4.0  (VileR / int10h)
+  Pet Me 64                Kreative Korp free-use  (R. Bettencourt)
+  VT323                    OFL-1.1  (The VT323 Project)
+  Monocraft                OFL-1.1  (Idrees Hassan)
+  Courier Prime            OFL-1.1  (Quote-Unquote Apps)
+
+System default font (no thematic font assigned):
+--------------------------------------------------------
+  batman, blueprint, cmyk, cyberpunk, hulk, pepsi,
+  solarized.dark, solarized.light, vscode
+
+Removed for legal safety (see fonts/CREDITS.md):
+--------------------------------------------------------
+  Perfect DOS VGA 437  -> no license grant; dos now uses PxPlus IBM VGA 8x16
+  pokemon-font         -> Nintendo/Game Freak IP; gameboy now uses VT323
+
+Fonts install to ~/.local/share/fonts/gnome-terminal-themes/   (bundled in ./fonts/)
+Adjust any point size in GNOME Terminal > Preferences > profile > Text.
