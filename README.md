@@ -29,11 +29,23 @@ python3 install.py --uninstall     # remove the profiles and the installed fonts
 - Re-running updates in place — deterministic IDs, no duplicates.
 - Fonts are copied to `~/.local/share/fonts/gnome-terminal-themes/` and
   registered with `fc-cache`.
-- 26 profiles are created and **ubuntu** is set as the default profile; pick
-  any other from GNOME Terminal's profile menu / title-bar picker, or change
-  the default in **Preferences**.
+- 26 profiles are created and **cyberpunk** is set as the default. Your own
+  profiles are **never renamed or deleted** — the installer just copies your
+  current default into a new profile called **default** (a safety snapshot) so
+  you can always get back to your original look. Set any profile as the default
+  anytime in **Preferences**.
 - Requirements: `dconf` (`sudo apt install dconf-cli` if missing) and
   `gnome-terminal`, run inside a GNOME session.
+
+## Uninstall
+```bash
+python3 install.py --uninstall
+```
+Cleanly reverses the install: removes all 26 theme profiles, deletes the
+bundled fonts from `~/.local/share/fonts/gnome-terminal-themes/`, and points
+the default back at the **default** profile (the copy of your pre-install
+default). Your own profiles are left completely untouched, so you can set
+whichever default you like — before or after installing/uninstalling.
 
 ## Themed fonts and their licenses
 

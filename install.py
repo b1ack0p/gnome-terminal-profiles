@@ -164,19 +164,19 @@ SCHEMES = {
         "palette": [
             "#0d0221",
             "#ff2740",
-            "#00ff9f",
+            "#00ff5f",
             "#f9f002",
-            "#0066ff",
+            "#0a84ff",
             "#ea00d9",
-            "#0abdc6",
+            "#08f7fe",
             "#d7d7f5",
             "#3b3b6d",
-            "#ff6e7f",
-            "#62ffce",
-            "#fdfd6d",
-            "#5a9bff",
+            "#ff4d5e",
+            "#4dff8f",
+            "#fbff4d",
+            "#5ca9ff",
             "#ff5ff1",
-            "#5cf2ff",
+            "#62fdff",
             "#ffffff"
         ]
     },
@@ -684,6 +684,19 @@ def read_list():   return re.findall(r"'([^']*)'", dconf(["read", BASE+"list"]).
 def q(s):          return "'" + s.replace("\\", "\\\\").replace("'", "\\'") + "'"
 def pid_for(n):    return str(uuid.uuid5(NS, "gnome-terminal-theme:"+n))
 
+SAVED_PID = pid_for("default-backup")   # a copy of the user's pre-install default, named 'default'
+
+def snapshot_default(ids):
+    """Copy the user's current default profile into a new profile named 'default' (once)."""
+    if SAVED_PID in ids: return
+    cur = dconf(["read", BASE + "default"]).stdout.strip().strip("'")
+    if not cur or cur == SAVED_PID: return
+    src  = dconf(["dump", BASE + ":" + cur + "/"]).stdout
+    keys = [ln for ln in src.splitlines() if "=" in ln and not ln.startswith("visible-name=")]
+    dconf(["load", BASE], input="[:%s]\nvisible-name='default'\n%s\n" % (SAVED_PID, "\n".join(keys)))
+    ids.append(SAVED_PID)
+    print("Saved your current default profile as a new 'default' profile.")
+
 def install_fonts():
     os.makedirs(FONT_DST, exist_ok=True)
     n = 0
@@ -741,14 +754,16 @@ def install(font_mode):
             dump += "use-system-font=true\n"
             sysfont_pids.append(pid)
         dump += "\n"
-    default_pid = pid_for("ubuntu")          # ubuntu is always the default profile
-    dump += "[/]\nlist=[%s]\ndefault=%s\n" % (", ".join(q(i) for i in ids), q(default_pid))
+    # snapshot the user's current default into a 'default' profile (once), then
+    # make cyberpunk the default profile
+    snapshot_default(ids)
+    dump += "[/]\nlist=[%s]\ndefault=%s\n" % (", ".join(q(i) for i in ids), q(pid_for("cyberpunk")))
     if subprocess.run(["dconf", "load", BASE], input=dump, text=True).returncode == 0:
         # dconf load can't unset keys, so clear any stale custom font on system-font profiles
         for pid in sysfont_pids:
             dconf(["reset", BASE + ":" + pid + "/font"])
-        print("Installed/updated %d GNOME Terminal profiles (%s font); default profile = ubuntu." % (len(SCHEMES), font_mode))
-        print('Pick one from the GNOME Terminal profile menu (ubuntu is the default).')
+        print("Installed/updated %d GNOME Terminal profiles (%s font); default profile = cyberpunk." % (len(SCHEMES), font_mode))
+        print('Pick any from the GNOME Terminal profile menu / Preferences (default is cyberpunk).')
     else:
         sys.exit("dconf load failed (is a GNOME session / dbus available?)")
 
@@ -756,12 +771,15 @@ def uninstall():
     ours = {pid_for(n) for n in SCHEMES}
     ids  = [i for i in read_list() if i not in ours]
     for pid in ours: dconf(["reset", "-f", BASE+":"+pid+"/"])
-    if dconf(["read", BASE+"default"]).stdout.strip().strip("'") in ours:
-        dconf(["reset", BASE+"default"])     # drop our ubuntu default if it was set
+    # point the default back at the saved 'default' profile (kept), else clear our default
+    if SAVED_PID in ids:
+        dconf(["write", BASE+"default", q(SAVED_PID)])
+    elif dconf(["read", BASE+"default"]).stdout.strip().strip("'") in ours:
+        dconf(["reset", BASE+"default"])
     subprocess.run(["dconf", "load", BASE], text=True, input="[/]\nlist=[%s]\n" % ", ".join(q(i) for i in ids))
     if os.path.isdir(FONT_DST):
         shutil.rmtree(FONT_DST); subprocess.run(["fc-cache", "-f"])
-    print("Removed %d profiles and the installed fonts." % len(ours))
+    print("Removed %d profiles and the installed fonts; default set back to the 'default' profile." % len(ours))
 
 if __name__ == "__main__":
     if "--uninstall" in sys.argv:
