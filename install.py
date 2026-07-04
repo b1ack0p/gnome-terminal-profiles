@@ -715,6 +715,7 @@ def install(font_mode):
         print("Font mode: system monospace for every profile (skipping themed-font install).")
     ids = read_list()
     dump = ""
+    sysfont_pids = []
     for name, sc in SCHEMES.items():
         pid = pid_for(name)
         if pid not in ids: ids.append(pid)
@@ -738,11 +739,16 @@ def install(font_mode):
             dump += "font=%s\n" % q("%s %d" % (fam, size))
         else:
             dump += "use-system-font=true\n"
+            sysfont_pids.append(pid)
         dump += "\n"
-    dump += "[/]\nlist=[%s]\n" % ", ".join(q(i) for i in ids)
+    default_pid = pid_for("ubuntu")          # ubuntu is always the default profile
+    dump += "[/]\nlist=[%s]\ndefault=%s\n" % (", ".join(q(i) for i in ids), q(default_pid))
     if subprocess.run(["dconf", "load", BASE], input=dump, text=True).returncode == 0:
-        print("Installed/updated %d GNOME Terminal profiles (%s font)." % (len(SCHEMES), font_mode))
-        print('Pick one from the GNOME Terminal profile menu, or set a default in Preferences.')
+        # dconf load can't unset keys, so clear any stale custom font on system-font profiles
+        for pid in sysfont_pids:
+            dconf(["reset", BASE + ":" + pid + "/font"])
+        print("Installed/updated %d GNOME Terminal profiles (%s font); default profile = ubuntu." % (len(SCHEMES), font_mode))
+        print('Pick one from the GNOME Terminal profile menu (ubuntu is the default).')
     else:
         sys.exit("dconf load failed (is a GNOME session / dbus available?)")
 
@@ -750,6 +756,8 @@ def uninstall():
     ours = {pid_for(n) for n in SCHEMES}
     ids  = [i for i in read_list() if i not in ours]
     for pid in ours: dconf(["reset", "-f", BASE+":"+pid+"/"])
+    if dconf(["read", BASE+"default"]).stdout.strip().strip("'") in ours:
+        dconf(["reset", BASE+"default"])     # drop our ubuntu default if it was set
     subprocess.run(["dconf", "load", BASE], text=True, input="[/]\nlist=[%s]\n" % ", ".join(q(i) for i in ids))
     if os.path.isdir(FONT_DST):
         shutil.rmtree(FONT_DST); subprocess.run(["fc-cache", "-f"])

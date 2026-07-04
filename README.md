@@ -29,8 +29,9 @@ python3 install.py --uninstall     # remove the profiles and the installed fonts
 - Re-running updates in place — deterministic IDs, no duplicates.
 - Fonts are copied to `~/.local/share/fonts/gnome-terminal-themes/` and
   registered with `fc-cache`.
-- 26 profiles are created; pick one from GNOME Terminal's profile menu /
-  title-bar picker, or set a default in **Preferences**.
+- 26 profiles are created and **ubuntu** is set as the default profile; pick
+  any other from GNOME Terminal's profile menu / title-bar picker, or change
+  the default in **Preferences**.
 - Requirements: `dconf` (`sudo apt install dconf-cli` if missing) and
   `gnome-terminal`, run inside a GNOME session.
 
