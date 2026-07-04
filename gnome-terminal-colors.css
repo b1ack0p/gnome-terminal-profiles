@@ -160,7 +160,6 @@ h5 {
 /* Cursor-colour hex chip: shown in the scheme's own colours. */
 .hex {
     padding: 0 0.35em;
-    border-radius: 3px;
     font-family: monospace;
 }
 
