@@ -733,7 +733,7 @@ UPSTREAM_SELECTION = {
     "hulk":            ("#4d504c", "#0b6309"),
     "solarized.dark":  ("#073642", "#93a1a1"),
     "solarized.light": ("#eee8d5", "#586e75"),
-    "ubuntu":          ("#b5d5ff", "#000000"),
+    "ubuntu":          ("#ffffff", "#300a24"),
     "vscode":          ("#3a3d41", "#e0e0e0"),
 }
 
