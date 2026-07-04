@@ -6,10 +6,9 @@ each with a matching themed **font**, a themed **cursor** colour, and a real
 the color data is embedded in `install.py` and every font ships in `fonts/` — so
 it works **fully offline**. No downloads, no network.
 
-Selection colours are authentic where the palette matches a scheme in
-[iTerm2-Color-Schemes](https://github.com/mbadolato/iTerm2-Color-Schemes) (its
-*Selection Color* / *Selected Text Color*); every other scheme uses reverse-video
-(the theme's own foreground/background swapped — the terminal default).
+Selection uses reverse-video for every scheme: the **selection colour is the
+theme's main foreground** and **selected text is drawn in the theme's main
+background**.
 
 ## Contents
 ```
