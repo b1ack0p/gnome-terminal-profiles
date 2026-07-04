@@ -720,6 +720,27 @@ def choose_font_mode():
         ans = ""
     return "system" if ans in ("2", "system", "s") else "themed"
 
+# Real selection (highlight) colours. Where our palette matches a scheme in
+# mbadolato/iTerm2-Color-Schemes we use that scheme's authentic "Selection
+# Color" / "Selected Text Color"; every other scheme falls back to reverse-video
+# (the terminal default: the theme's own fg/bg swapped), so selected text still
+# changes colour per theme.
+UPSTREAM_SELECTION = {
+    "batman":          ("#4d504c", "#f0e04a"),
+    "firefox":         ("#163c61", "#f2f5f9"),
+    "github.dark":     ("#e6edf3", "#0d1117"),
+    "github.light":    ("#1f2328", "#ffffff"),
+    "hulk":            ("#4d504c", "#0b6309"),
+    "solarized.dark":  ("#073642", "#93a1a1"),
+    "solarized.light": ("#eee8d5", "#586e75"),
+    "ubuntu":          ("#b5d5ff", "#000000"),
+    "vscode":          ("#3a3d41", "#e0e0e0"),
+}
+
+def selection_for(name, sc):
+    """(highlight-background, highlight-foreground) for a scheme."""
+    return UPSTREAM_SELECTION.get(name, (sc["fg"], sc["bg"]))
+
 def install(font_mode):
     if not shutil.which("dconf"): sys.exit("`dconf` not found -> sudo apt install dconf-cli")
     if font_mode == "themed":
@@ -746,6 +767,10 @@ def install(font_mode):
             dump += "cursor-foreground-color=%s\n" % q(sc["bg"])
         else:
             dump += "cursor-colors-set=false\n"
+        sb, sf = selection_for(name, sc)
+        dump += "highlight-colors-set=true\n"
+        dump += "highlight-background-color=%s\n" % q(sb)
+        dump += "highlight-foreground-color=%s\n" % q(sf)
         if font_mode == "themed" and name in FONTS:
             fam, size = FONTS[name]
             dump += "use-system-font=false\n"
