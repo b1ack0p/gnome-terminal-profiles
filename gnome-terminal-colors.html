@@ -6,7 +6,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>GNOME Terminal color profiles</title>
-  <link rel="stylesheet" href="gnome-terminal-colors.css?v=11" />
+  <link rel="stylesheet" href="gnome-terminal-colors.css?v=12" />
   <link rel="icon" type="image/svg+xml" href="/img/favicon.svg" />
 
 </head>
@@ -32,12 +32,13 @@
 
   <h1># GNOME Terminal Color Profiles</h1>
 
-  <p class="intro">The 26 color profiles installed by <code>install.py</code>. Each grid is a <code>msgcat&nbsp;--color=test</code> matrix of the profile's foregrounds &times; backgrounds. Under each profile name is its themed font (or &ldquo;system font&rdquo;).</p>
+  <p class="intro">The 26 color profiles installed by <code>install.py</code>. Each grid is a <code>msgcat&nbsp;--color=test</code> matrix of the profile's foregrounds &times; backgrounds. Under each profile name is its themed font (or &ldquo;system font&rdquo;) and cursor color (&ldquo;default&rdquo; where the profile keeps GNOME&rsquo;s standard cursor).</p>
 
   <p class="repo-link">Repository: <a href="https://github.com/b1ack0p/gnome-terminal-profiles" target="_blank" rel="noopener noreferrer">github.com/b1ack0p/gnome-terminal-profiles</a></p>
 
   <h4>batman (Batman)</h4>
-  <p class="meta">font: system font</p>
+  <p class="meta">font: system font<br>
+  cursor color: <span class="hex" style="background:#1b1d1e;color:#6f6f6f">#fcef0c</span></p>
     <div class="grid" style="background:#1b1d1e;color:#6f6f6f">
   <table>
     <tr class="gh"><td class="gl"></td><td>def</td><td>40m</td><td>41m</td><td>42m</td><td>43m</td><td>44m</td><td>45m</td><td>46m</td><td>47m</td></tr>
@@ -63,7 +64,8 @@
   </div>
 
   <h4>blueprint (Blueprint)</h4>
-  <p class="meta">font: system font</p>
+  <p class="meta">font: system font<br>
+  cursor color: default</p>
     <div class="grid" style="background:#0e3a6b;color:#ffffff">
   <table>
     <tr class="gh"><td class="gl"></td><td>def</td><td>40m</td><td>41m</td><td>42m</td><td>43m</td><td>44m</td><td>45m</td><td>46m</td><td>47m</td></tr>
@@ -89,7 +91,8 @@
   </div>
 
   <h4>c64.16color (Commodore 64 16-color)</h4>
-  <p class="meta">font: Pet Me 64</p>
+  <p class="meta">font: Pet Me 64<br>
+  cursor color: <span class="hex" style="background:#2e2c9b;color:#706deb">#706deb</span></p>
     <div class="grid" style="background:#2e2c9b;color:#706deb">
   <table>
     <tr class="gh"><td class="gl"></td><td>def</td><td>40m</td><td>41m</td><td>42m</td><td>43m</td><td>44m</td><td>45m</td><td>46m</td><td>47m</td></tr>
@@ -115,7 +118,8 @@
   </div>
 
   <h4>c64.8color (Commodore 64 8-color)</h4>
-  <p class="meta">font: Pet Me 64</p>
+  <p class="meta">font: Pet Me 64<br>
+  cursor color: <span class="hex" style="background:#2e2c9b;color:#706deb">#706deb</span></p>
     <div class="grid" style="background:#2e2c9b;color:#706deb">
   <table>
     <tr class="gh"><td class="gl"></td><td>def</td><td>40m</td><td>41m</td><td>42m</td><td>43m</td><td>44m</td><td>45m</td><td>46m</td><td>47m</td></tr>
@@ -141,7 +145,8 @@
   </div>
 
   <h4>cga (CGA)</h4>
-  <p class="meta">font: PxPlus IBM CGA</p>
+  <p class="meta">font: PxPlus IBM CGA<br>
+  cursor color: default</p>
     <div class="grid" style="background:#000000;color:#ffffff">
   <table>
     <tr class="gh"><td class="gl"></td><td>def</td><td>40m</td><td>41m</td><td>42m</td><td>43m</td><td>44m</td><td>45m</td><td>46m</td><td>47m</td></tr>
@@ -167,7 +172,8 @@
   </div>
 
   <h4>cmyk (CMYK)</h4>
-  <p class="meta">font: system font</p>
+  <p class="meta">font: system font<br>
+  cursor color: <span class="hex" style="background:#000000;color:#aaaaaa">#fff200</span></p>
     <div class="grid" style="background:#000000;color:#aaaaaa">
   <table>
     <tr class="gh"><td class="gl"></td><td>def</td><td>40m</td><td>41m</td><td>42m</td><td>43m</td><td>44m</td><td>45m</td><td>46m</td><td>47m</td></tr>
@@ -192,8 +198,23 @@
   </table>
   </div>
 
+    <h5>CMYK Color Model:</h5>
+
+  <div class="cmyk-fig" role="img" aria-label="CMYK Color Model">
+    <span class="cmyk-cyan"></span>
+    <span class="cmyk-magenta"></span>
+    <span class="cmyk-yellow"></span>
+    <span class="cmyk-clip cmyk-red"><span></span></span>
+    <span class="cmyk-clip cmyk-green"><span></span></span>
+    <span class="cmyk-clip cmyk-blue"><span></span></span>
+    <span class="cmyk-clip cmyk-core"><span class="cmyk-clip"><span></span></span></span>
+  </div>
+
+  
+
   <h4>cyberpunk (Cyberpunk Neon)</h4>
-  <p class="meta">font: system font</p>
+  <p class="meta">font: system font<br>
+  cursor color: <span class="hex" style="background:#0d0221;color:#0abdc6">#ea00d9</span></p>
     <div class="grid" style="background:#0d0221;color:#0abdc6">
   <table>
     <tr class="gh"><td class="gl"></td><td>def</td><td>40m</td><td>41m</td><td>42m</td><td>43m</td><td>44m</td><td>45m</td><td>46m</td><td>47m</td></tr>
@@ -219,7 +240,8 @@
   </div>
 
   <h4>dos (MS-DOS)</h4>
-  <p class="meta">font: PxPlus IBM VGA 8x16</p>
+  <p class="meta">font: PxPlus IBM VGA 8x16<br>
+  cursor color: default</p>
     <div class="grid" style="background:#000000;color:#aaaaaa">
   <table>
     <tr class="gh"><td class="gl"></td><td>def</td><td>40m</td><td>41m</td><td>42m</td><td>43m</td><td>44m</td><td>45m</td><td>46m</td><td>47m</td></tr>
@@ -245,7 +267,8 @@
   </div>
 
   <h4>firefox (Firefox)</h4>
-  <p class="meta">font: Fira Mono</p>
+  <p class="meta">font: Fira Mono<br>
+  cursor color: <span class="hex" style="background:#0e1011;color:#7c8fa4">#708284</span></p>
     <div class="grid" style="background:#0e1011;color:#7c8fa4">
   <table>
     <tr class="gh"><td class="gl"></td><td>def</td><td>40m</td><td>41m</td><td>42m</td><td>43m</td><td>44m</td><td>45m</td><td>46m</td><td>47m</td></tr>
@@ -271,7 +294,8 @@
   </div>
 
   <h4>gameboy (Game Boy DMG)</h4>
-  <p class="meta">font: VT323</p>
+  <p class="meta">font: VT323<br>
+  cursor color: <span class="hex" style="background:#0f380f;color:#9bbc0f">#9bbc0f</span></p>
     <div class="grid" style="background:#0f380f;color:#9bbc0f">
   <table>
     <tr class="gh"><td class="gl"></td><td>def</td><td>40m</td><td>41m</td><td>42m</td><td>43m</td><td>44m</td><td>45m</td><td>46m</td><td>47m</td></tr>
@@ -297,7 +321,8 @@
   </div>
 
   <h4>github.dark (GitHub Dark Default)</h4>
-  <p class="meta">font: Monaspace Neon Frozen</p>
+  <p class="meta">font: Monaspace Neon Frozen<br>
+  cursor color: <span class="hex" style="background:#0d1117;color:#e6edf3">#e6edf3</span></p>
     <div class="grid" style="background:#0d1117;color:#e6edf3">
   <table>
     <tr class="gh"><td class="gl"></td><td>def</td><td>40m</td><td>41m</td><td>42m</td><td>43m</td><td>44m</td><td>45m</td><td>46m</td><td>47m</td></tr>
@@ -323,7 +348,8 @@
   </div>
 
   <h4>github.light (GitHub Light Default)</h4>
-  <p class="meta">font: Monaspace Neon Frozen</p>
+  <p class="meta">font: Monaspace Neon Frozen<br>
+  cursor color: <span class="hex" style="background:#ffffff;color:#1f2328">#1f2328</span></p>
     <div class="grid" style="background:#ffffff;color:#1f2328">
   <table>
     <tr class="gh"><td class="gl"></td><td>def</td><td>40m</td><td>41m</td><td>42m</td><td>43m</td><td>44m</td><td>45m</td><td>46m</td><td>47m</td></tr>
@@ -349,7 +375,8 @@
   </div>
 
   <h4>hulk (Hulk)</h4>
-  <p class="meta">font: system font</p>
+  <p class="meta">font: system font<br>
+  cursor color: <span class="hex" style="background:#1b1d1e;color:#b5b5b5">#16b61b</span></p>
     <div class="grid" style="background:#1b1d1e;color:#b5b5b5">
   <table>
     <tr class="gh"><td class="gl"></td><td>def</td><td>40m</td><td>41m</td><td>42m</td><td>43m</td><td>44m</td><td>45m</td><td>46m</td><td>47m</td></tr>
@@ -375,7 +402,8 @@
   </div>
 
   <h4>minecraft (Minecraft)</h4>
-  <p class="meta">font: Monocraft</p>
+  <p class="meta">font: Monocraft<br>
+  cursor color: <span class="hex" style="background:#000000;color:#aaaaaa">#aaaaaa</span></p>
     <div class="grid" style="background:#000000;color:#aaaaaa">
   <table>
     <tr class="gh"><td class="gl"></td><td>def</td><td>40m</td><td>41m</td><td>42m</td><td>43m</td><td>44m</td><td>45m</td><td>46m</td><td>47m</td></tr>
@@ -400,8 +428,164 @@
   </table>
   </div>
 
+  	<h5>A Detailed Minecraft Color Codes Guide:</h5>
+
+  <div class="mc-palette-wrap">
+  <table class="mc-palette">
+
+    <tr class="mcp0">
+      <td>&sect;0</td>
+      <td>Black</td>
+      <td>black</td>
+      <td>0</td><td>0</td><td>0</td>
+      <td>000000</td>
+      <td>0</td><td>0</td><td>0</td>
+      <td>000000</td>
+    </tr>
+    <tr class="mcp1">
+      <td>&sect;1</td>
+      <td>Dark Blue</td>
+      <td>dark_blue</td>
+      <td>0</td><td>0</td><td>170</td>
+      <td>0000AA</td>
+      <td>0</td><td>0</td><td>42</td>
+      <td>00002A</td>
+    </tr>
+    <tr class="mcp2">
+      <td>&sect;2</td>
+      <td>Dark Green</td>
+      <td>dark_green</td>
+      <td>0</td><td>170</td><td>0</td>
+      <td>00AA00</td>
+      <td>0</td><td>42</td><td>0</td>
+      <td>002A00</td>
+    </tr>
+    <tr class="mcp3">
+      <td>&sect;3</td>
+      <td>Dark Aqua</td>
+      <td>dark_aqua</td>
+      <td>0</td><td>170</td><td>170</td>
+      <td>00AAAA</td>
+      <td>0</td><td>42</td><td>42</td>
+      <td>002A2A</td>
+    </tr>
+    <tr class="mcp4">
+      <td>&sect;4</td>
+      <td>Dark Red</td>
+      <td>dark_red</td>
+      <td>170</td><td>0</td><td>0</td>
+      <td>AA0000</td>
+      <td>42</td><td>0</td><td>0</td>
+      <td>2A0000</td>
+    </tr>
+    <tr class="mcp5">
+      <td>&sect;5</td>
+      <td>Dark Purple</td>
+      <td>dark_purple</td>
+      <td>170</td><td>0</td><td>170</td>
+      <td>AA00AA</td>
+      <td>42</td><td>0</td><td>42</td>
+      <td>2A002A</td>
+    </tr>
+    <tr class="mcp6">
+      <td>&sect;6</td>
+      <td>Gold</td>
+      <td>gold</td>
+      <td>255</td><td>170</td><td>0</td>
+      <td>FFAA00</td>
+      <td>42</td><td>42</td><td>0</td>
+      <td>2A2A00</td>
+    </tr>
+    <tr class="mcp7">
+      <td>&sect;7</td>
+      <td>Gray</td>
+      <td>gray</td>
+      <td>170</td><td>170</td><td>170</td>
+      <td>AAAAAA</td>
+      <td>42</td><td>42</td><td>42</td>
+      <td>2A2A2A</td>
+    </tr>
+    <tr class="mcp8">
+      <td>&sect;8</td>
+      <td>Dark Gray</td>
+      <td>dark_gray</td>
+      <td>85</td><td>85</td><td>85</td>
+      <td>555555</td>
+      <td>21</td><td>21</td><td>21</td>
+      <td>151515</td>
+    </tr>
+    <tr class="mcp9">
+      <td>&sect;9</td>
+      <td>Blue</td>
+      <td>blue</td>
+      <td>85</td><td>85</td><td>255</td>
+      <td>5555FF</td>
+      <td>21</td><td>21</td><td>63</td>
+      <td>15153F</td>
+    </tr>
+    <tr class="mcpa">
+      <td>&sect;a</td>
+      <td>Green</td>
+      <td>green</td>
+      <td>85</td><td>255</td><td>85</td>
+      <td>55FF55</td>
+      <td>21</td><td>63</td><td>21</td>
+      <td>153F15</td>
+    </tr>
+    <tr class="mcpb">
+      <td>&sect;b</td>
+      <td>Aqua</td>
+      <td>aqua</td>
+      <td>85</td><td>255</td><td>255</td>
+      <td>55FFFF</td>
+      <td>21</td><td>63</td><td>63</td>
+      <td>153F3F</td>
+    </tr>
+    <tr class="mcpc">
+      <td>&sect;c</td>
+      <td>Red</td>
+      <td>red</td>
+      <td>255</td><td>85</td><td>85</td>
+      <td>FF5555</td>
+      <td>63</td><td>21</td><td>21</td>
+      <td>3F1515</td>
+    </tr>
+    <tr class="mcpd">
+      <td>&sect;d</td>
+      <td>Light Purple</td>
+      <td>light_purple</td>
+      <td>255</td><td>85</td><td>255</td>
+      <td>FF55FF</td>
+      <td>63</td><td>21</td><td>63</td>
+      <td>3F153F</td>
+    </tr>
+    <tr class="mcpe">
+      <td>&sect;e</td>
+      <td>Yellow</td>
+      <td>yellow</td>
+      <td>255</td><td>255</td><td>85</td>
+      <td>FFFF55</td>
+      <td>63</td><td>63</td><td>21</td>
+      <td>3F3F15</td>
+    </tr>
+    <tr class="mcpf">
+      <td>&sect;f</td>
+      <td>White</td>
+      <td>white</td>
+      <td>255</td><td>255</td><td>255</td>
+      <td>FFFFFF</td>
+      <td>63</td><td>63</td><td>63</td>
+      <td>3F3F3F</td>
+    </tr>
+
+  </table>
+  </div>
+
+  
+
   <h4>mono.black (Monochrome white on black)</h4>
-  <p class="meta">font: Courier Prime</p>
+  <p class="meta">font: Courier Prime<br>
+  cursor color: default</p>
     <div class="grid" style="background:#000000;color:#ffffff">
   <table>
     <tr class="gh"><td class="gl"></td><td>def</td><td>40m</td><td>41m</td><td>42m</td><td>43m</td><td>44m</td><td>45m</td><td>46m</td><td>47m</td></tr>
@@ -427,7 +611,8 @@
   </div>
 
   <h4>mono.white (Monochrome black on white)</h4>
-  <p class="meta">font: Courier Prime</p>
+  <p class="meta">font: Courier Prime<br>
+  cursor color: default</p>
     <div class="grid" style="background:#ffffff;color:#000000">
   <table>
     <tr class="gh"><td class="gl"></td><td>def</td><td>40m</td><td>41m</td><td>42m</td><td>43m</td><td>44m</td><td>45m</td><td>46m</td><td>47m</td></tr>
@@ -453,7 +638,8 @@
   </div>
 
   <h4>pepsi (Pepsi)</h4>
-  <p class="meta">font: system font</p>
+  <p class="meta">font: system font<br>
+  cursor color: <span class="hex" style="background:#004b93;color:#ffffff">#e32934</span></p>
     <div class="grid" style="background:#004b93;color:#ffffff">
   <table>
     <tr class="gh"><td class="gl"></td><td>def</td><td>40m</td><td>41m</td><td>42m</td><td>43m</td><td>44m</td><td>45m</td><td>46m</td><td>47m</td></tr>
@@ -479,7 +665,8 @@
   </div>
 
   <h4>phosphor.amber (Amber Phosphor)</h4>
-  <p class="meta">font: VT323</p>
+  <p class="meta">font: VT323<br>
+  cursor color: default</p>
     <div class="grid" style="background:#282828;color:#ffb000">
   <table>
     <tr class="gh"><td class="gl"></td><td>def</td><td>40m</td><td>41m</td><td>42m</td><td>43m</td><td>44m</td><td>45m</td><td>46m</td><td>47m</td></tr>
@@ -505,7 +692,8 @@
   </div>
 
   <h4>phosphor.blue (Blue Phosphor VT101)</h4>
-  <p class="meta">font: VT323</p>
+  <p class="meta">font: VT323<br>
+  cursor color: default</p>
     <div class="grid" style="background:#282828;color:#00a3dd">
   <table>
     <tr class="gh"><td class="gl"></td><td>def</td><td>40m</td><td>41m</td><td>42m</td><td>43m</td><td>44m</td><td>45m</td><td>46m</td><td>47m</td></tr>
@@ -531,7 +719,8 @@
   </div>
 
   <h4>phosphor.green (Green Phosphor)</h4>
-  <p class="meta">font: VT323</p>
+  <p class="meta">font: VT323<br>
+  cursor color: default</p>
     <div class="grid" style="background:#282828;color:#33ff33">
   <table>
     <tr class="gh"><td class="gl"></td><td>def</td><td>40m</td><td>41m</td><td>42m</td><td>43m</td><td>44m</td><td>45m</td><td>46m</td><td>47m</td></tr>
@@ -556,8 +745,76 @@
   </table>
   </div>
 
+    <h5>Vintage Phosphor Colors:</h5>
+
+<div class="phosphor">
+
+ <table class="phosphor">
+
+    <tr class="amber">
+      <td class="title">Amber</td>
+      <td class="content">The quick brown fox jumps over the lazy dog.</td>
+      <td class="rgb">RGB (255,176,0) = #FFB000 = 600 nm (P3)</td>
+    </tr>
+    <tr class="amberLt">
+      <td class="title">Lt. Amb.</td>
+      <td class="content">The quick brown fox jumps over the lazy dog.</td>
+      <td class="rgb">RGB (255,204,0) = #FFCC00 = 593 nm</td>
+    </tr>
+    <tr class="blank">
+      <td class="title"></td>
+      <td class="content">&nbsp;</td>
+      <td class="rgb"></td>
+    </tr>
+    <tr class="green1">
+      <td class="title">Green 1</td>
+      <td class="content">The quick brown fox jumps over the lazy dog.</td>
+      <td class="rgb">RGB (51,255,0) = #33FF00 = 524 nm</td>
+    </tr>
+    <tr class="apple2">
+      <td class="title">Apple ][</td>
+      <td class="content">The quick brown fox jumps over the lazy dog.</td>
+      <td class="rgb">RGB (51,255,51) = #33FF33&nbsp;&nbsp;(P1)</td>
+    </tr>
+    <tr class="green2">
+      <td class="title">Green 2</td>
+      <td class="content">The quick brown fox jumps over the lazy dog.</td>
+      <td class="rgb">RGB (0,255,51) = #00FF33 = 506 nm</td>
+    </tr>
+    <tr class="blank">
+      <td class="title"></td>
+      <td class="content">&nbsp;</td>
+      <td class="rgb"></td>
+    </tr>
+    <tr class="apple2c">
+      <td class="title">Apple <i>//c</i></td>
+      <td class="content">The quick brown fox jumps over the lazy dog.</td>
+      <td class="rgb">RGB (102,255,102) = #66FF66&nbsp;&nbsp;(P24)</td>
+    </tr>
+    <tr class="green3">
+      <td class="title">Green 3</td>
+      <td class="content">The quick brown fox jumps over the lazy dog.</td>
+      <td class="rgb">RGB (0,255,102) = #00FF66 = 502 nm</td>
+    </tr>
+    <tr class="blank">
+      <td class="title"></td>
+      <td class="content">&nbsp;</td>
+      <td class="rgb"></td>
+    </tr>
+    <tr class="phosphorBackground">
+      <td class="title"></td>
+      <td class="content">Background :</td>
+      <td class="rgb">RGB (40,40,40) = #282828</td>
+    </tr>
+
+  </table>
+  </div>
+
+  
+
   <h4>powershell (Windows PowerShell)</h4>
-  <p class="meta">font: Cascadia Mono</p>
+  <p class="meta">font: Cascadia Mono<br>
+  cursor color: default</p>
     <div class="grid" style="background:#012456;color:#eeedf0">
   <table>
     <tr class="gh"><td class="gl"></td><td>def</td><td>40m</td><td>41m</td><td>42m</td><td>43m</td><td>44m</td><td>45m</td><td>46m</td><td>47m</td></tr>
@@ -583,7 +840,8 @@
   </div>
 
   <h4>solarized.dark (Solarized dark)</h4>
-  <p class="meta">font: system font</p>
+  <p class="meta">font: system font<br>
+  cursor color: <span class="hex" style="background:#002b36;color:#657b83">#93a1a1</span></p>
     <div class="grid" style="background:#002b36;color:#657b83">
   <table>
     <tr class="gh"><td class="gl"></td><td>def</td><td>40m</td><td>41m</td><td>42m</td><td>43m</td><td>44m</td><td>45m</td><td>46m</td><td>47m</td></tr>
@@ -609,7 +867,8 @@
   </div>
 
   <h4>solarized.light (Solarized light)</h4>
-  <p class="meta">font: system font</p>
+  <p class="meta">font: system font<br>
+  cursor color: <span class="hex" style="background:#fdf6e3;color:#839496">#586e75</span></p>
     <div class="grid" style="background:#fdf6e3;color:#839496">
   <table>
     <tr class="gh"><td class="gl"></td><td>def</td><td>40m</td><td>41m</td><td>42m</td><td>43m</td><td>44m</td><td>45m</td><td>46m</td><td>47m</td></tr>
@@ -634,8 +893,75 @@
   </table>
   </div>
 
+    <h5>Solarized Palette:</h5>
+
+  <div class="sol-pal">
+    <div class="sol-hrow">
+      <div class="sol-hgrp w2"><span>Background Tones</span><i class="sol-brk"></i></div>
+      <div class="sol-hgrp w4"><span>Content Tones</span><i class="sol-brk"></i></div>
+      <div class="sol-hgrp w2"><span>Background Tones</span><i class="sol-brk"></i></div>
+    </div>
+    <div class="sol-row sol-tones">
+      <div class="sw t03 dark"><span>Base03</span></div>
+      <div class="sw t02 dark"><span>Base02</span></div>
+      <div class="sw t01 dark"><span>Base01</span></div>
+      <div class="sw t00 dark"><span>Base00</span></div>
+      <div class="sw t0 dark"><span>Base0</span></div>
+      <div class="sw t1 dark"><span>Base1</span></div>
+      <div class="sw t2 lite"><span>Base2</span></div>
+      <div class="sw t3 lite"><span>Base3</span></div>
+    </div>
+    <div class="sol-row sol-vals"><div><span>15</span></div><div><span>20</span></div><div><span>45</span></div><div><span>50</span></div><div><span>60</span></div><div><span>65</span></div><div><span>92</span></div><div><span>97</span></div></div>
+    <div class="sol-lstar">L* Lightness (CIELAB)</div>
+    <div class="sol-hrow sol-accent-hdr">
+      <div class="sol-hgrp w8"><span>Accent Colors</span><i class="sol-brk"></i></div>
+    </div>
+    <div class="sol-row sol-accents">
+      <div class="sw aY"><span>Yellow</span></div><div class="sw aO"><span>Orange</span></div>
+      <div class="sw aR"><span>Red</span></div><div class="sw aM"><span>Magenta</span></div>
+      <div class="sw aV"><span>Violet</span></div><div class="sw aB"><span>Blue</span></div>
+      <div class="sw aC"><span>Cyan</span></div><div class="sw aG"><span>Green</span></div>
+    </div>
+    <div class="sol-row sol-harm">
+      <div class="hcell"><span class="glyph"><i class="a180"></i><i class="a30"></i><i class="a330"></i></span><em>Split Comp</em></div>
+      <div class="hcell"><span class="glyph"><i class="a0"></i><i class="a180"></i></span><em>Complement</em></div>
+      <div class="hcell"><span class="glyph"><i class="a180"></i><i class="a60"></i><i class="a300"></i></span><em>Triad</em></div>
+      <div class="hcell"><span class="glyph"><i class="a0"></i><i class="a90"></i><i class="a180"></i><i class="a270"></i></span><em>Tetrad</em></div>
+      <div class="hcell"><span class="glyph"><i class="a0"></i><i class="a180"></i><i class="a135"></i><i class="a225"></i></span><em>Analogous</em></div>
+      <div class="hcell"><span class="glyph"><i class="mono"></i></span><em>Monotone</em></div>
+      <div class="hcell"><span class="glyph"><i class="a0"></i><i class="a180"></i><i class="a135"></i><i class="a225"></i></span><em>Analogous</em></div>
+      <div class="hcell"><span class="glyph"><i class="a0"></i><i class="a90"></i><i class="a180"></i><i class="a270"></i></span><em>Tetrad</em></div>
+    </div>
+  </div>
+
+  <h5>Solarized Symmetry:</h5>
+
+  <div class="sol-sym">
+    <!-- light mode: cols 3,4,6,7,8 -->
+    <i class="sq yl x3 t01"></i><i class="sq yl x4 t00"></i><i class="sq yl x6 t1"></i><i class="sq yl x7 t2"></i><i class="sq yl x8 t3"></i>
+    <!-- middle: all 8 -->
+    <i class="sq ym x1 t03"></i><i class="sq ym x2 t02"></i><i class="sq ym x3 t01"></i><i class="sq ym x4 t00"></i><i class="sq ym x5 t0"></i><i class="sq ym x6 t1"></i><i class="sq ym x7 t2"></i><i class="sq ym x8 t3"></i>
+    <!-- dark: cols 1,2,3,5,6 -->
+    <i class="sq yd x1 t03"></i><i class="sq yd x2 t02"></i><i class="sq yd x3 t01"></i><i class="sq yd x5 t0"></i><i class="sq yd x6 t1"></i>
+    <!-- separators -->
+    <span class="ln sep1"></span><span class="ln sep2"></span>
+    <!-- top brackets -->
+    <span class="ln b10at"></span><span class="ln b9at"></span><span class="ln b6at"></span><span class="ln bat"></span>
+    <!-- bottom brackets -->
+    <span class="ln bab"></span><span class="ln b6ab"></span><span class="ln b9ab"></span><span class="ln b10ab"></span>
+    <!-- labels -->
+    <span class="lbl l10at">10a</span><span class="lbl l9at">9a</span><span class="lbl l6at">6a</span><span class="lbl lat">a</span>
+    <span class="lbl lab">a</span><span class="lbl l6ab">6a</span><span class="lbl l9ab">9a</span><span class="lbl l10ab">10a</span>
+    <span class="lbl llight">light mode</span><span class="lbl ldark">dark mode</span>
+  </div>
+
+  <p><small><em>Solarized color scheme by <a href="https://ethanschoonover.com/solarized/" target="_blank" rel="noopener noreferrer">Ethan Schoonover</a> (ethanschoonover.com/solarized).</em></small></p>
+
+  
+
   <h4>ubuntu (Ubuntu GNOME)</h4>
-  <p class="meta">font: Ubuntu Mono</p>
+  <p class="meta">font: Ubuntu Mono<br>
+  cursor color: default</p>
     <div class="grid" style="background:#300a24;color:#ffffff">
   <table>
     <tr class="gh"><td class="gl"></td><td>def</td><td>40m</td><td>41m</td><td>42m</td><td>43m</td><td>44m</td><td>45m</td><td>46m</td><td>47m</td></tr>
@@ -661,7 +987,8 @@
   </div>
 
   <h4>vscode (VS Code)</h4>
-  <p class="meta">font: system font</p>
+  <p class="meta">font: system font<br>
+  cursor color: default</p>
     <div class="grid" style="background:#1e1e1e;color:#cccccc">
   <table>
     <tr class="gh"><td class="gl"></td><td>def</td><td>40m</td><td>41m</td><td>42m</td><td>43m</td><td>44m</td><td>45m</td><td>46m</td><td>47m</td></tr>
@@ -687,7 +1014,8 @@
   </div>
 
   <h4>winterminal (Windows Terminal Campbell)</h4>
-  <p class="meta">font: Cascadia Code</p>
+  <p class="meta">font: Cascadia Code<br>
+  cursor color: default</p>
     <div class="grid" style="background:#0c0c0c;color:#cccccc">
   <table>
     <tr class="gh"><td class="gl"></td><td>def</td><td>40m</td><td>41m</td><td>42m</td><td>43m</td><td>44m</td><td>45m</td><td>46m</td><td>47m</td></tr>
