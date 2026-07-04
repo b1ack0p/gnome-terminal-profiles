@@ -4,8 +4,10 @@
 Everything is bundled (color data embedded, fonts in ./fonts/) -- NO network needed.
 
 Usage:
-  python3 install.py             install / update all profiles + fonts
-  python3 install.py --uninstall remove the profiles and the installed fonts
+  python3 install.py                 install / update all profiles (asks: themed or system font)
+  python3 install.py --system-font   ... use your system monospace font for every profile
+  python3 install.py --themed-fonts  ... use the matching bundled font per profile
+  python3 install.py --uninstall     remove the profiles and the installed fonts
 
 Profiles appear in GNOME Terminal > Preferences. Re-running updates in place
 (deterministic UUIDs, no duplicates). Requires `dconf` and gnome-terminal.
@@ -691,9 +693,26 @@ def install_fonts():
     subprocess.run(["fc-cache", "-f", FONT_DST])
     return n
 
-def install():
+def choose_font_mode():
+    """Themed bundled fonts, or the user's system monospace font? Flag, else prompt."""
+    if "--system-font" in sys.argv:                            return "system"
+    if "--themed-fonts" in sys.argv or "--themed" in sys.argv:  return "themed"
+    if not sys.stdin.isatty():                                  return "themed"  # non-interactive default
+    print("Font for the terminal profiles:")
+    print("  [1] Themed fonts  - each profile uses its matching bundled font (default)")
+    print("  [2] System font   - every profile uses your current system monospace font")
+    try:
+        ans = input("Choose [1/2] (default 1): ").strip().lower()
+    except EOFError:
+        ans = ""
+    return "system" if ans in ("2", "system", "s") else "themed"
+
+def install(font_mode):
     if not shutil.which("dconf"): sys.exit("`dconf` not found -> sudo apt install dconf-cli")
-    print("Installing %d fonts (offline) -> %s" % (install_fonts(), FONT_DST))
+    if font_mode == "themed":
+        print("Installing %d fonts (offline) -> %s" % (install_fonts(), FONT_DST))
+    else:
+        print("Font mode: system monospace for every profile (skipping themed-font install).")
     ids = read_list()
     dump = ""
     for name, sc in SCHEMES.items():
@@ -713,7 +732,7 @@ def install():
             dump += "cursor-foreground-color=%s\n" % q(sc["bg"])
         else:
             dump += "cursor-colors-set=false\n"
-        if name in FONTS:
+        if font_mode == "themed" and name in FONTS:
             fam, size = FONTS[name]
             dump += "use-system-font=false\n"
             dump += "font=%s\n" % q("%s %d" % (fam, size))
@@ -722,7 +741,7 @@ def install():
         dump += "\n"
     dump += "[/]\nlist=[%s]\n" % ", ".join(q(i) for i in ids)
     if subprocess.run(["dconf", "load", BASE], input=dump, text=True).returncode == 0:
-        print("Installed/updated %d GNOME Terminal profiles." % len(SCHEMES))
+        print("Installed/updated %d GNOME Terminal profiles (%s font)." % (len(SCHEMES), font_mode))
         print('Pick one from the GNOME Terminal profile menu, or set a default in Preferences.')
     else:
         sys.exit("dconf load failed (is a GNOME session / dbus available?)")
@@ -737,4 +756,7 @@ def uninstall():
     print("Removed %d profiles and the installed fonts." % len(ours))
 
 if __name__ == "__main__":
-    (uninstall if "--uninstall" in sys.argv else install)()
+    if "--uninstall" in sys.argv:
+        uninstall()
+    else:
+        install(choose_font_mode())

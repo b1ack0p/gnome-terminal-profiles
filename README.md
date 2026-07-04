@@ -17,9 +17,15 @@ README.md        this file
 
 ## Usage
 ```bash
-python3 install.py             # install / update all profiles + fonts
-python3 install.py --uninstall # remove the profiles and the installed fonts
+python3 install.py                 # install / update all profiles (asks: themed or system font)
+python3 install.py --system-font   # ... use your system monospace font for every profile
+python3 install.py --themed-fonts  # ... use the matching bundled font per profile
+python3 install.py --uninstall     # remove the profiles and the installed fonts
 ```
+- On install you're asked whether each profile should use its **themed font**
+  (the matching bundled font) or your **system monospace font**; pass
+  `--system-font` / `--themed-fonts` to skip the prompt. System-font mode
+  doesn't install the bundled fonts.
 - Re-running updates in place — deterministic IDs, no duplicates.
 - Fonts are copied to `~/.local/share/fonts/gnome-terminal-themes/` and
   registered with `fc-cache`.
